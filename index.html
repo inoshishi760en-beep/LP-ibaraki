@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>茨城旅行LP | 東京からすぐ、うつくしい青へ。</title>
+    <meta name="description" content="海も山も滝も、四季のコントラストが鮮やかな茨城。週末、小さな冒険に出かけよう。見どころ、モデルコース、アクセス、FAQをまとめたMVPランディングページ。" />
+    <link rel="canonical" href="https://example.com/" />
+    <meta name="theme-color" content="#1e40af" />
+
+    <!-- OGP / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="茨城旅行LP | 東京からすぐ、うつくしい青へ。" />
+    <meta property="og:description" content="海も山も滝も、四季のコントラストが鮮やかな茨城。週末、小さな冒険に出かけよう。" />
+    <!-- Hero画像候補: Oarai Shrine sunrise / Ibaraki coast -->
+    <!-- 画像URL参考: https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2400&auto=format&fit=crop -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Noto Sans JP', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
+            },
+            keyframes: {
+              'fade-in': { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+              up: { '0%': { transform: 'translateY(8px)', opacity: 0 }, '100%': { transform: 'translateY(0)', opacity: 1 } },
+            },
+            animation: {
+              'fade-in': 'fade-in 1s ease-out forwards',
+              up: 'up .8s ease-out forwards',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html { scroll-behavior: smooth; }
+      /* Reduce motion for users preferring it */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body class="font-sans text-slate-900 bg-slate-50">
+    <!-- Header -->
+    <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all bg-white/30 backdrop-blur supports-[backdrop-filter]:bg-white/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#hero" class="flex items-center gap-2 font-bold tracking-wide text-slate-900" aria-label="IBARAKI TRIP トップへ">
+            <span class="text-blue-800">IBARAKI</span>
+            <span class="text-slate-700">TRIP</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="メインナビゲーション">
+            <a href="#highlights" class="text-slate-700 hover:text-blue-800">見どころ</a>
+            <a href="#model-course" class="text-slate-700 hover:text-blue-800">モデルコース</a>
+            <a href="#access" class="text-slate-700 hover:text-blue-800">アクセス</a>
+            <a href="#faq" class="text-slate-700 hover:text-blue-800">よくある質問</a>
+            <a href="#cta" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-800 text-white hover:bg-blue-700 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">予約</a>
+          </nav>
+          <button id="menu-btn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" aria-label="メニューを開く" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-nav" class="md:hidden hidden border-t border-slate-200 bg-white/90 backdrop-blur">
+        <div class="px-4 py-3 flex flex-col gap-3 text-sm">
+          <a href="#highlights" class="py-2">見どころ</a>
+          <a href="#model-course" class="py-2">モデルコース</a>
+          <a href="#access" class="py-2">アクセス</a>
+          <a href="#faq" class="py-2">よくある質問</a>
+          <a href="#cta" class="py-2 text-blue-800 font-semibold">予約</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <!-- 背景画像参考キーワード: Oarai Shrine sunrise / Ibaraki coast / 大洗磯前神社 -->
+    <!-- 画像URL例: https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2400&auto=format&fit=crop -->
+    <section id="hero" class="relative min-h-[100svh] flex items-center">
+      <div aria-hidden="true" class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2400&auto=format&fit=crop');"></div>
+      <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="max-w-2xl text-white animate-fade-in">
+          <p class="uppercase tracking-widest text-sky-300/90 text-xs sm:text-sm">IBARAKI TRIP</p>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mt-3">東京からすぐ、うつくしい青へ。</h1>
+          <p class="mt-5 text-base sm:text-lg text-white/90">海も山も滝も、四季のコントラストが鮮やかな茨城。週末、小さな冒険に出かけよう。</p>
+          <div class="mt-8 flex items-center gap-4">
+            <a href="#model-course" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-800 hover:bg-blue-700 text-white shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+              <span>週末モデルコースを見る</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#highlights" class="inline-flex items-center text-white/80 hover:text-white">見どころを先に見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-slate-900">見どころ</h2>
+          <p class="mt-2 text-slate-600">四季がくっきりと彩る景色へ。まずは写真から旅気分に。</p>
+        </header>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Card 1: ひたち海浜公園 -->
+          <!-- 画像キーワード: Hitachi Seaside Park / Nemophila / Kochia -->
+          <article class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden animate-up">
+            <figure class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1620072923263-9fc73f2dc996?q=80&w=800&auto=format&fit=crop"
+                srcset="https://images.unsplash.com/photo-1620072923263-9fc73f2dc996?q=80&w=480&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1620072923263-9fc73f2dc996?q=80&w=800&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1620072923263-9fc73f2dc996?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                alt="ひたち海浜公園の丘に咲くネモフィラ"
+                loading="lazy"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
+            </figure>
+            <div class="p-5">
+              <h3 class="font-semibold">国営ひたち海浜公園</h3>
+              <p class="mt-2 text-sm text-slate-600">四季の花が一面に広がる絶景。春のネモフィラ、秋のコキアは必見。</p>
+              <a href="https://hitachikaihin.jp/" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 text-sm text-blue-800 hover:underline" aria-label="国営ひたち海浜公園 公式サイトを詳しく見る">詳しく</a>
+            </div>
+          </article>
+
+          <!-- Card 2: 袋田の滝 -->
+          <!-- 画像キーワード: Fukuroda Falls / Ibaraki -->
+          <article class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden animate-up [animation-delay:.06s]">
+            <figure class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1542627086-7a96d3c5d3ad?q=80&w=800&auto=format&fit=crop"
+                srcset="https://images.unsplash.com/photo-1542627086-7a96d3c5d3ad?q=80&w=480&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1542627086-7a96d3c5d3ad?q=80&w=800&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1542627086-7a96d3c5d3ad?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                alt="袋田の滝の流れと新緑"
+                loading="lazy"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
+            </figure>
+            <div class="p-5">
+              <h3 class="font-semibold">袋田の滝</h3>
+              <p class="mt-2 text-sm text-slate-600">凍てつく冬、瑞々しい新緑、紅葉の秋。四度訪れてほしい名瀑。</p>
+              <a href="https://www.town.daigo.ibaraki.jp/page/page000180.html" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 text-sm text-blue-800 hover:underline" aria-label="袋田の滝 詳細を見る">詳しく</a>
+            </div>
+          </article>
+
+          <!-- Card 3: 大洗磯前神社 -->
+          <!-- 画像キーワード: Oarai Isosaki Shrine / Torii / Sunrise -->
+          <article class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden animate-up [animation-delay:.12s]">
+            <figure class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1545569341-9eb8b30979a0?q=80&w=800&auto=format&fit=crop"
+                srcset="https://images.unsplash.com/photo-1545569341-9eb8b30979a0?q=80&w=480&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1545569341-9eb8b30979a0?q=80&w=800&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1545569341-9eb8b30979a0?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                alt="大洗磯前神社の海に立つ鳥居と朝陽"
+                loading="lazy"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
+            </figure>
+            <div class="p-5">
+              <h3 class="font-semibold">大洗磯前神社</h3>
+              <p class="mt-2 text-sm text-slate-600">海に立つ鳥居が朝日に染まる瞬間は、息をのむ美しさ。</p>
+              <a href="https://oarai-isosakijinja.net/" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 text-sm text-blue-800 hover:underline" aria-label="大洗磯前神社 公式サイトを詳しく見る">詳しく</a>
+            </div>
+          </article>
+
+          <!-- Card 4: 筑波山 -->
+          <!-- 画像キーワード: Mount Tsukuba / Ropeway / Ibaraki -->
+          <article class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden animate-up [animation-delay:.18s]">
+            <figure class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1606715894524-8a3acadbcd67?q=80&w=800&auto=format&fit=crop"
+                srcset="https://images.unsplash.com/photo-1606715894524-8a3acadbcd67?q=80&w=480&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1606715894524-8a3acadbcd67?q=80&w=800&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1606715894524-8a3acadbcd67?q=80&w=1200&auto=format&fit=crop 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                alt="筑波山と広がる関東平野の眺望"
+                loading="lazy"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
+            </figure>
+            <div class="p-5">
+              <h3 class="font-semibold">筑波山</h3>
+              <p class="mt-2 text-sm text-slate-600">ロープウェイで空へ。関東平野を見晴らすパノラマ。</p>
+              <a href="https://www.mt-tsukuba.com/" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1 text-sm text-blue-800 hover:underline" aria-label="筑波山 公式サイトを詳しく見る">詳しく</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Course -->
+    <section id="model-course" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="max-w-3xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-slate-900">日帰りでも満足、写真が増える1日</h2>
+          <p class="mt-2 text-slate-600">東京からの小さな冒険。海と花と滝と温泉をぎゅっと。</p>
+        </header>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-2">
+          <div>
+            <ol class="relative border-l border-slate-200 pl-6 space-y-6">
+              <li>
+                <div class="absolute -left-[9px] mt-1.5 w-3 h-3 rounded-full bg-green-600"></div>
+                <h3 class="font-semibold">朝：大洗で朝日と海の鳥居</h3>
+                <p class="text-sm text-slate-600 mt-1">静けさの中、波音とご来光で旅のスイッチを入れる。</p>
+              </li>
+              <li>
+                <div class="absolute -left-[9px] mt-1.5 w-3 h-3 rounded-full bg-green-600"></div>
+                <h3 class="font-semibold">午前：ひたち海浜公園で季節の花</h3>
+                <p class="text-sm text-slate-600 mt-1">ネモフィラやコキアの丘をのんびり周遊、写真は広角で。</p>
+              </li>
+              <li>
+                <div class="absolute -left-[9px] mt-1.5 w-3 h-3 rounded-full bg-green-600"></div>
+                <h3 class="font-semibold">昼：ひたちなかで海鮮</h3>
+                <p class="text-sm text-slate-600 mt-1">市場で新鮮な海の幸を。人気店は早めの来店が安心。</p>
+              </li>
+              <li>
+                <div class="absolute -left-[9px] mt-1.5 w-3 h-3 rounded-full bg-green-600"></div>
+                <h3 class="font-semibold">午後：袋田の滝散策</h3>
+                <p class="text-sm text-slate-600 mt-1">トンネルや吊り橋を歩いて滝を多方向から楽しむ。</p>
+              </li>
+              <li>
+                <div class="absolute -left-[9px] mt-1.5 w-3 h-3 rounded-full bg-green-600"></div>
+                <h3 class="font-semibold">夕方：温泉で〆</h3>
+                <p class="text-sm text-slate-600 mt-1">帰路の前にひと息。海を望む露天もおすすめ。</p>
+              </li>
+            </ol>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="rounded-2xl bg-slate-50 p-5 border border-slate-200">
+              <h3 class="font-semibold">所要時間の目安</h3>
+              <p class="text-sm text-slate-600 mt-1">朝〜夕で約10〜12時間（移動含む）。写真や食事をゆっくり楽しむなら早出が安心。</p>
+            </div>
+            <div class="rounded-2xl bg-sky-50 p-5 border border-sky-200">
+              <h3 class="font-semibold">移動のヒント</h3>
+              <ul class="mt-1 text-sm text-slate-700 list-disc list-inside space-y-1">
+                <li>海沿いは風が強い日も。体感温度に注意。</li>
+                <li>公園の花は季節で見頃が変動。公式最新情報を確認。</li>
+                <li>滝の周辺は滑りやすい箇所あり。歩きやすい靴で。</li>
+              </ul>
+            </div>
+            <a href="#cta" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-semibold shadow-sm">今週末の空き状況をチェック</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access -->
+    <section id="access" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="max-w-3xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-slate-900">アクセス</h2>
+          <p class="mt-2 text-slate-600">東京方面から電車・車ともに約1.5〜2.5時間。週末の日帰りも現実的。</p>
+        </header>
+        <div class="mt-8 grid gap-8 lg:grid-cols-2 items-start">
+          <div class="space-y-4">
+            <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-200">
+              <h3 class="font-semibold">東京からの目安</h3>
+              <ul class="mt-2 text-sm text-slate-700 space-y-1">
+                <li>電車：上野駅→水戸駅 特急で約70〜90分 + ローカル移動</li>
+                <li>車　：都心→常磐道で約1.5〜2.5時間（目的地により前後）</li>
+              </ul>
+              <p class="mt-3 text-xs text-slate-500">注意：実際の時刻・料金はリンク先等で最新をご確認ください。</p>
+            </div>
+            <a href="https://www.jreast.co.jp/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-blue-800 hover:underline">JR東日本 時刻・運賃</a>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+            <!-- Google Map (Ibaraki Prefectural Government vicinity) -->
+            <iframe title="茨城県庁周辺地図" aria-label="茨城県庁周辺の地図" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.6198767614135!2d140.44227637640612!3d36.34181157239504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602222f5e2f2a8bd%3A0x3e57045a0c996f6e!2z5paw5a6_55CG6auY5bO2!5e0!3m2!1sja!2sjp!4v1715750000000!5m2!1sja!2sjp" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="max-w-2xl">
+          <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-slate-900">よくある質問</h2>
+          <p class="mt-2 text-slate-600">初めての方へ、ざっくりQ&amp;A。</p>
+        </header>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <details class="group rounded-2xl bg-slate-50 p-5 border border-slate-200">
+            <summary class="cursor-pointer font-semibold flex items-center justify-between">
+              ベストシーズンは？
+              <span class="ml-4 text-slate-500 group-open:rotate-180 transition">▾</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">春のネモフィラ、秋のコキア・紅葉が特に人気。海は夏も爽快、冬は澄んだ空気と朝日が美しい。</p>
+          </details>
+          <details class="group rounded-2xl bg-slate-50 p-5 border border-slate-200">
+            <summary class="cursor-pointer font-semibold flex items-center justify-between">
+              雨の日でも楽しめる？
+              <span class="ml-4 text-slate-500 group-open:rotate-180 transition">▾</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">美術館・市場・カフェ巡り、滝の迫力は雨後に増すことも。レインウェアがあると安心。</p>
+          </details>
+          <details class="group rounded-2xl bg-slate-50 p-5 border border-slate-200">
+            <summary class="cursor-pointer font-semibold flex items-center justify-between">
+              車なしで回れる？
+              <span class="ml-4 text-slate-500 group-open:rotate-180 transition">▾</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">主要観光地はバス・タクシーと組み合わせれば可能。時刻は事前に要確認、レンタサイクルも便利。</p>
+          </details>
+          <details class="group rounded-2xl bg-slate-50 p-5 border border-slate-200">
+            <summary class="cursor-pointer font-semibold flex items-center justify-between">
+              モバイル電波や支払いは？
+              <span class="ml-4 text-slate-500 group-open:rotate-180 transition">▾</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">市街地は概ね良好。キャッシュレス対応は拡大中だが現金も少額持参がおすすめ。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-16 sm:py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold">思い立ったら、茨城。</h2>
+        <p class="mt-3 text-white/90">青のコントラストが濃い週末へ。空き状況をチェック。</p>
+        <div class="mt-8 flex items-center justify-center gap-4">
+          <a href="https://www.jalan.net/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-600 hover:bg-green-500 text-white font-semibold shadow-lg" aria-label="外部の予約サイトを開く（じゃらん：仮リンク）">今週末の空き状況をチェック</a>
+          <a href="mailto:hello@example.com?subject=%E8%8C%A8%E5%9F%8E%E6%97%85%E8%A1%8CLP%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white" aria-label="メールで問い合わせる">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-white border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-sm text-slate-600">© <span id="year"></span> IBARAKI TRIP</div>
+          <nav class="flex items-center gap-5 text-sm">
+            <a href="#highlights" class="hover:text-blue-800">見どころ</a>
+            <a href="#model-course" class="hover:text-blue-800">モデルコース</a>
+            <a href="#access" class="hover:text-blue-800">アクセス</a>
+            <a href="#faq" class="hover:text-blue-800">FAQ</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <a href="#" aria-label="X (Twitter) のダミーリンク" class="text-slate-500 hover:text-slate-700">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.487 11.24H17.21l-5.54-7.24-6.34 7.24H1.997l7.73-8.826L1.5 2.25h6.098l5.016 6.62 5.63-6.62zm-1.16 18.5h1.833L7.01 4.126H5.05l12.035 16.624z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram のダミーリンク" class="text-slate-500 hover:text-slate-700">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm6.25-4a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18.25 5.5z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube のダミーリンク" class="text-slate-500 hover:text-slate-700">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 7.5s-.234-1.653-.952-2.381C21.72 4.5 20.8 4.5 20.8 4.5 17.6 4.27 12 4.25 12 4.25h0S6.4 4.27 3.2 4.5c0 0-.92 0-1.748.619C.734 5.847.5 7.5.5 7.5S.27 9.37.27 11.24v1.51C.27 14.62.5 16.5.5 16.5s.234 1.653.952 2.381C2.28 19.5 3.2 19.5 3.2 19.5c3.2.23 8.8.25 8.8.25s5.6-.02 8.8-.25c0 0 .92 0 1.748-.619.718-.728.952-2.381.952-2.381s.23-1.88.23-3.75v-1.51C23.73 9.37 23.5 7.5 23.5 7.5zM9.75 14.75v-6l6 3-6 3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast: Cookie-like notice (text only) -->
+    <div id="toast" class="fixed left-4 right-4 sm:right-auto bottom-4 z-[60] hidden">
+      <div class="max-w-md rounded-xl bg-slate-900 text-slate-100 shadow-lg p-4 flex items-start gap-3">
+        <div class="mt-0.5">
+          <svg class="w-5 h-5 text-sky-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10c0-.34-.02-.68-.05-1.01a2 2 0 0 1-2.58-2.58A10.1 10.1 0 0 0 12 2zM11 10V6h2v4h-2zm0 8v-6h2v6h-2z"/></svg>
+        </div>
+        <p class="text-sm leading-5">本ページでは快適な閲覧のため最小限の解析を行う場合があります。詳細は外部リンクをご確認ください（デモ文言）。</p>
+        <button id="toast-dismiss" class="ml-auto inline-flex items-center px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-500 text-white text-sm">OK</button>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Header background change on scroll
+      const header = document.getElementById('site-header');
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuBtn = document.getElementById('menu-btn');
+      const yearSpan = document.getElementById('year');
+      const toast = document.getElementById('toast');
+      const toastDismiss = document.getElementById('toast-dismiss');
+
+      function onScroll() {
+        const scrolled = window.scrollY > 8;
+        header.classList.toggle('shadow', scrolled);
+        header.classList.toggle('bg-white', scrolled);
+        header.classList.toggle('bg-white/30', !scrolled);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Mobile menu toggle
+      menuBtn?.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('hidden');
+        const expanded = !open ? 'false' : 'true';
+        menuBtn.setAttribute('aria-expanded', expanded);
+      });
+
+      // Footer year
+      yearSpan.textContent = new Date().getFullYear();
+
+      // Intersection Observer to gently reveal cards (progressive enhancement)
+      const observer = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('opacity-100', 'translate-y-0');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 }) : null;
+
+      document.querySelectorAll('.animate-up').forEach(el => {
+        el.classList.add('opacity-0', 'translate-y-2', 'transition');
+        observer?.observe(el);
+      });
+
+      // Simple cookie-like toast
+      try {
+        const key = 'ibaraki_consent_v1';
+        if (!localStorage.getItem(key)) {
+          toast.classList.remove('hidden');
+        }
+        toastDismiss?.addEventListener('click', () => {
+          localStorage.setItem(key, 'ok');
+          toast.classList.add('hidden');
+        });
+      } catch (_) {}
+    </script>
+  </body>
+  </html>
+
