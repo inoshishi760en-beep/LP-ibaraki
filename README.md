@@ -2,20 +2,20 @@
 
 単一HTML（Tailwind CDN）で構成した茨城観光訴求用ランディングページです。モバイル優先・高速表示・読みやすさを重視しています。
 
-- 主要ファイル: `index.html`
+- 主要ファイル: `docs/index.html`
 - 画像: 外部（Unsplash）の著作権フリー画像URLを使用
 
 ## ローカルプレビュー方法
 
-最も簡単な方法は、`index.html` をブラウザで直接開くことです。
+最も簡単な方法は、`docs/index.html` をブラウザで直接開くことです。
 
 1. このフォルダを開く
-2. `index.html` をダブルクリック（既定ブラウザで開く）
+2. `docs/index.html` をダブルクリック（既定ブラウザで開く）
 
 開発者向けに簡易HTTPサーバーでのプレビューも可能です（任意）。
 
-- macOS/Linux: `python3 -m http.server 8080` → `http://localhost:8080/`
-- Windows (PowerShell): `python -m http.server 8080`
+- macOS/Linux: `python3 -m http.server 8080` → `http://localhost:8080/docs/`
+- Windows (PowerShell): `python -m http.server 8080` → `http://localhost:8080/docs/`
 
 ## 画像の差し替え方法
 
@@ -69,4 +69,3 @@
 ## ライセンス/クレジット（画像）
 
 - 画像は Unsplash からの外部リンクを仮使用しています。運用時は各画像の利用条件を確認し、必要に応じてクレジット表記や差し替えをご検討ください。
-
